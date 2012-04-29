@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>php Best Practices: impara a scrivere codice php professionale - GrUSP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Il libro sulle best practice su PHP scritto dalla community per la community">
+    <meta name="author" content="Francesco Fullone">
+
+    <!-- Le styles -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .hero-unit {
+          background-image: url('img/bg_body.jpg');
+          background-position: bottom left;
+      }
+
+
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+
+  <body  data-spy="scroll">
+
+    <div class="navbar navbar-fixed-top" id="navbarbook">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">phpBestPractices</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="#contents">Contenuti</a></li>
+              <li><a href="#code">Codice</a></li>
+              <li><a href="#buy">Acquista</a></li>
+              <li><a href="#authors">Autori</a></li>
+              <li><a href="http://www.grusp.org">GrUSP</a></li>
+              <li><a href="http://www.fag.it">FAG Editore</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>php Best Practices</h1>
+          <p></p>
+        <div class="row">
+          <div class="span6">
+        <p>Con la continua evoluzione delle tecnologie legate al web è sempre più importante garantire elevati standard di qualità al fine di ridurre i costi di gestione delle applicazioni.
+           PHP Best Practices , il primo libro nel suo genere in lingua italiana, affronta dal punto di vista di alcuni professionisti di spicco nel mondo PHP italiano le migliori pratiche di sviluppo introdotte dalle nuove versioni del linguaggio.</p>
+        </div></div>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row" id="contents">
+        <div class="span4">
+            <div class="thumbnail">
+                <img src="./img/cover.png" alt="cover" />
+                <div class="caption">
+                    <p>Vuoi avere una succosa anteprima del libro? Che aspetti?</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-success btn-large"><i class="icon-download"></i> Leggi un capitolo gratis!</a>
+                        <a href="#" class="btn btn-info btn-large"><i class="icon-book"></i> Compra il libro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span4">
+          <h2>Cosa contiene questo libro</h2>
+           <p>Il libro è suddiviso in tre parti. Nella prima si parla della community PHP, a livello mondiale e a italiano, e delle novità più importanti di <code>PHP 5.4</code>.</p>
+           <p>La seconda parte del libro è incentrata sull’introduzione e la descrizione di librerie specifiche messe a disposizione dal linguaggio. In particolare, si parla di <code>Standard PHP Library</code>, della gestione delle date e del tempo, di <code>cloud computing</code>, dei <code>sistemi di caching</code> e dei concetti alla base delle <code>tecnologie REST</code> e dei <code>web services</code>.</p>
+           <p>La terza e ultima parte è dedicata alle buone pratiche, sia metodologiche sia tecniche. In primo luogo, vengono trattati i pattern e gli aspetti legati alla <code>sicurezza</code> e alla <code>crittografia dei dati</code>. Viene quindi dato ampio spazio alle problematiche di pubblicazione del codice, con due capitoli dedicati al <code>deploy</code> e alla <code>Continuous Integration</code>.</p>
+           <p>Vengono infine illustrate le migliori pratiche per fare <code>Test Driven Development</code>, per calcolare le metriche del codice e per la profilazione delle applicazioni, al fine di renderle più performanti.</p>
+       </div>
+        <div class="span4">
+            <h2>Per chi è questo libro</h2>
+            <p>Il libro è dedicato a tutti gli <strong>sviluppatori PHP</strong>, sia quelli più esperti sia quelli alle prime armi.</p>
+            <p><strong>PHP Best Practices</strong> è stato studiato come un ricettario, da cui ognuno può tirare fuori la migliore ricetta e rielaborarla secondo le proprie necessità.</p> 
+            <p>Non solo teoria, ma anche <strong>molti esempi concreti</strong> e casi di studio che permettono di mettere subito in pratica ciò che si è appreso.</p>
+            <p></p><a href="http://www.grusp.org"><img src="./img/grusp.png" alt="cover" align="right"/></a></p>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row" id="code">
+          <div class="span8">
+              <h2>Feedback e codice di esempio</h2>
+              <p>Per tutti noi i feedback sono molto importanti: ci daranno la misura di quanto siamo riusciti a raggiungere gli obiettivi prefissati con questo libro e ci aiuteranno a fare meglio la prossima volta.</p>
+              <p>Potete contattarci e scaricare gli esempi tramite il <i class="icon-download-alt"></i> <a href="https://github.com/GrUSP/php_best_practices">repository GitHub</a> e la relativa pagina <a href="http://www.facebook.com/gruspbestpractices">Facebook</a>.</p>
+
+              <div class="well">
+                  <h3>Questo libro ti piace? Dillo ai tuoi amici!</h3>
+                  <p>
+                      <!-- AddThis Button BEGIN -->
+                  <div class="addthis_toolbox addthis_default_style ">
+                      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                      <a class="addthis_button_tweet"></a>
+                      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                      <a class="addthis_counter addthis_pill_style"></a>
+                  </div>
+                  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e5ebfc30280a1a8"></script>
+                  <!-- AddThis Button END -->                  </p>
+              </div>
+          </div>
+
+          <div class="span4">
+              <h2>Risorse utili</h2>
+              <p>La comunità di PHP è sempre in fermento ed è sempre possibile trovare interessanti risorse sul web.</p>
+              <p>Oltre al sito del <a href="http://www.grusp.org">GrUSP</a> e alla relativa mailing list vi consigliamo di tenere nei vostri preferiti il sito <a href="http://www.php.net">ufficiale di PHP</a>.</p>
+              <p>Non dimenticatevi, inoltre, che molte novità, con i relativi approfondimenti, arrivano dalle conferenze come il <a href="http://www.phpday.it">phpDay</a>.</p>
+              <p>Se vi sentite particolarmente pigri esiste un collettore di blog sul linguaggio, chiamato <a href="http://planet-php.net">Planet PHP</a>, i cui articoli sono sempre un ottimo spunto da cui far partire le proprie sessioni di studio.</p>
+          </div>
+      </div>
+
+      <hr>
+
+      <div class="row" id="authors">
+          <div class="span12"><h2>Gli Autori</h2></div>
+
+          <div class="span4">
+              <address>
+                <h3>Massimiliano Arione</h3>
+                <span class="label label-info">massimiliano.arione@grusp.org</span> <a href="http://twitter.com/garak" class="label"><i class="icon-user icon-white"></i> @garak</a>
+              </address>
+              <p>Massimiliano Arione, una laurea in statistica nel cassetto, ha scoperto il web negli
+              anni ‘90. Sviluppa in PHP a livello professionale dal 2001. Appassionato di open
+              source, collabora attivamente alla comunità italiana di Symfony e più in generale di
+              PHP. È membro del direttivo del <a href="http://www.grusp.org">GrUSP</a> e presidente del <a href="http://roma.grusp.org">PHP User Group Roma</a>. È
+              PHP5 Zend Certified Engineer.</p>
+          </div>
+          <div class="span4">
+              <address>
+                <h3>Manuel Baldassarri</h3>
+                <span class="label label-info">manuel.baldassarri@ideato.it</span> <a href="http://twitter.com/k3a" class="label"><i class="icon-user icon-white"></i> @k3a</a>
+              </address>
+              <p>Manuel Baldassarri ha iniziato a lavorare come artigiano del web nel
+              1992 e con PHP nel 1998. Ha proseguito gli studi alternando lavori per il web, software gestionali, business intelligence
+              e risponditori telefonici per riapprodare sul web dopo la laurea in Scienze
+              dell’Informazione nel 2004. È socio di <a href="http://www.ideato.it">Ideato</a>, dove lavora come Senior Developer.
+              Appassionato di fotografia e della buona cucina</p>
+          </div>
+          <div class="span4">
+              <address>
+                <h3>Alessandro Cinelli</h3>
+                <span class="label label-info">alessandro.cinelli@grusp.org</span> <a href="http://twitter.com/cirpo" class="label"><i class="icon-user icon-white"></i> @cirpo</a>
+              </address>
+              <p>Alessandro Cinelli, detto <em>cirpo</em>, è sviluppatore PHP dal 2006. Ha iniziato come
+              sistemista Linux per poi approdare con grande entusiasmo alla programmazione
+              web, utilizzando diversi linguaggi come Java, JavaScript e PHP. È membro del direttivo
+              di <a href="http://www.grusp.org">GrUSP</a>, <a href="http://www.webdebs.com">WebDeBs</a> (gruppo bresciano di professionisti che lavorano sul web)
+              e <a href="http://roma.grusp.org">PugRoma</a> (PHP user group Roma). Adora la buona tavola, la birra belga, i concerti
+              e i festival musicali.</p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="span4">
+              <address>
+                <h3>Filippo De Santis</h3>
+                <span class="label label-info">filippo.desantis@ideato.it</span> <a href="http://twitter.com/filippodesantis" class="label"><i class="icon-user icon-white"></i> @filippodesantis</a>
+              </address>
+              <p>Si è laureato in Scienze dell'Informazione presso l'Università di
+                  Bologna con una tesi sul Test Driven Development e le Metodologie
+                  Agili in collaborazione con <a href="http://www.ideato.it">Ideato</a>.
+                  L'interesse per le Metodologie Agili era nato durante il periodo di
+                  studio all'estero presso la Durham University (UK), dove ha vissuto per 9 mesi. Lavora presso Ideato dal 2008 e da allora non ha mai smesso di imparare cose nuove su Agile e PHP.
+                  Gli piace (quasi) qualsiasi tipo di cibo.</p>
+          </div>
+
+          <div class="span4">
+              <address>
+                <h3>Francesco Fullone</h3>
+                <span class="label label-info">francesco.fullone@grusp.org</span> <a href="http://twitter.com/fullo" class="label"><i class="icon-user icon-white"></i> @fullo</a>
+              </address>
+              <p>Laureatosi in Scienze dell’Informazione, dopo una carriera da consulente sempre in giro per l’Italia ha deciso di fermarsi un po’ e per fondare a Cesena <a href="http://www.ideato.it">Ideato</a>, azienda specializzata in PHP e nelle tecnologie web, di cui è attualmente CEO . Fallendo miseramente nel suo desiderio di stanzialità, oggi Francesco gira tutta l’Europa partecipando a eventi e conferenze come Evangelist PHP, HTML5 e Open Source a nome di Ideato e partecipa alla creazione di startup sul web.
+              Dedica il poco tempo libero ai viaggi di piacere, alla scrittura di libri ed all’organizzazione di eventi e conferenze sulle tecnologie web, collaborando a tale scopo, con il ruolo di presidente, con l’associazione degli sviluppatori italiani di PHP <a href="http://www.grusp.org">GrUSP</a>.</p>
+          </div>
+          <div class="span4">
+              <address>
+                <h3>Daniel Londero</h3>
+                <span class="label label-info">daniel.londero@grusp.org</span> <a href="http://twitter.com/dlondero" class="label"><i class="icon-user icon-white"></i> @dlondero</a>
+              </address>
+              <p>Laureatosi in Informatica all'Università degli Studi di Udine nel 2005
+              ha iniziato da subito la sua carriera lavorativa come sviluppatore
+              PHP. Dal 2007 utilizza Symfony framework, che inizialmente studia per
+              hobby, riuscendo poi a introdurlo in azienda dove ora è il framework
+              di sviluppo principale utilizzato per importanti progetti web. È
+              membro del direttivo del GrUSP ed è uno dei fondatori del <a href="http://friuli.grusp.org">PugFriuli</a>
+              (PHP user group Friuli). Appassionato di running ed amante dei cani.</p>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="span3">
+              <address>
+                <h3>Michele Orselli</h3>
+                <span class="label label-info">michele.orselli@ideato.it</span> <a href="http://twitter.com/_orso_" class="label"><i class="icon-user icon-white"></i> @_orso_</a>
+              </address>
+              <p>Laureato in Ingegneria Informatica all’università di Bologna, si è avvicinato a PHP e
+                  allo sviluppo web durante gli studi. Dal 2008 lavora presso <a href="http://www.ideato.it">Ideato</a>. Come molti
+                  altri programmatori è pigro e non vorrebbe mai scrivere una riga di codice più del
+                  necessario: per questo gli interessano particolarmente gli strumenti e le tecniche a
+                  supporto dell’automazione del processo di sviluppo e della QA (Quality Assurance).
+                  Nel tempo libero, quando non scrive programmi inutili, ama leggere, viaggiare e d’estate
+                  giocare a beach tennis.</p>
+          </div>
+
+          <div class="span3">
+              <address>
+                  <h3>Jacopo Romei</h3>
+                  <span class="label label-info">jacopo.romei@ideato.it</span> <a href="http://twitter.com/jacoporomei" class="label"><i class="icon-user icon-white"></i> @jacoporomei</a>
+              </address>
+              <p>Coach, sviluppatore, autore e cantante. Lavora con PHP dal 1999 e come coach dal 2005, in Italia e all'estero per <a href="http://www.ideato.it">ideato</a>. E' il co-autore del libro "<a href="http://www.apress.com/9781430227274">Pro PHP Refactoring</a>" edito da Apress nel 2010. E' un membro attivo del progetto Symfony CMF, ha co-fondato il PHP User Group Roma ed è un membro attivo in diverse community italiane ed internazionali. Nel tempo libero ha la passione della mountain bike, la vela, la fotografia e la musica a cappella.</p>
+          </div>
+
+          <div class="span3">
+              <address>
+                <h3>Francesco Trucchia</h3>
+                <span class="label label-info">francesco.trucchia@ideato.it</span> <a href="http://twitter.com/cphp" class="label"><i class="icon-user icon-white"></i> @cphp</a>
+              </address>
+              <p>Dopo la laurea in Scienze dell’Informazione ha lavorato alcuni anni come sviluppatore
+                  web per varie società italiane. È co-fondatore e CTO di <a href="http://www.ideato.it">ideato</a>. Appassionato dello sviluppo con metodi agili, ha introdotto queste
+                  pratiche in ideato, con ottimi risultati su tutto il processo di creazione del software.</p>
+          </div>
+
+          <div class="span3">
+              <address>
+                <h3>Enrico Zimuel</h3>
+                <span class="label label-info">enrico@zimuel.it</span> <a href="http://twitter.com/ezimuel" class="label"><i class="icon-user icon-white"></i> @ezimuel</a>
+              </address>
+              <p>Laureato in Economia Informatica presso l’Università di Chieti-Pescara, ha svolto attività
+              di ricerca presso l’Informatics Institute dell’Università di Amsterdam. Software
+              Engineer dal 1996, lavora come Senior PHP Engineer per Zend Technologies, nel team
+              di sviluppo dello Zend Framework. È relatore in diverse conferenze internazionali sul
+              PHP, tra le quali: Dutch PHP Conference, Barcelona PHP Conference, International
+              PHP Conference, ZendCon, phpDay. È socio del GrUSP e fondatore del primo <a href="http://torino.grusp.org">PHP
+              User Group di Torino</a>.</p>
+          </div>
+      </div>
+
+
+      <footer>
+        <p>&copy; GrUSP - FAG Edizioni - &copy; 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+  </body>
+</html>
