@@ -17,6 +17,19 @@
       .hero-unit {
           background-image: url('img/bg_body.jpg');
       }
+
+      code {
+          color: #506db1;
+          font-weight: bold;
+      }
+        
+      .icon-user{
+          background: url("img/twitter.png");
+      }
+
+      a{
+         color: #506db1;
+      }
     </style>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -45,6 +58,14 @@
   </head>
 
   <body  data-spy="scroll">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253491758028026";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
     <div class="navbar navbar-fixed-top" id="navbarbook">
       <div class="navbar-inner">
@@ -92,9 +113,14 @@
                     <div class="">
                         <a href="#" class="btn btn-success btn-large"><i class="icon-download"></i> Leggi un capitolo gratis!</a>
                         <a href="#" class="btn btn-info btn-large"><i class="icon-book"></i> Acquista</a>
+                        <br />
+                        <br />
+                        (presto disponibili...)
                     </div>
                 </div>
             </div>
+            <p></p>
+            <a href="http://www.grusp.it"><img src="./img/grusp.png" alt="cover" align="left"/></a>
         </div>
         <div class="span4">
           <h2>Cosa contiene questo libro</h2>
@@ -108,7 +134,8 @@
             <p>Il libro è dedicato a tutti gli <strong>sviluppatori PHP</strong>, sia quelli più esperti sia quelli alle prime armi.</p>
             <p><strong>PHP Best Practices</strong> è stato studiato come un ricettario, da cui ognuno può tirare fuori la migliore ricetta e rielaborarla secondo le proprie necessità.</p> 
             <p>Non solo teoria, ma anche <strong>molti esempi concreti</strong> e casi di studio che permettono di mettere subito in pratica ciò che si è appreso.</p>
-            <p></p><a href="http://www.grusp.org"><img src="./img/grusp.png" alt="cover" align="right"/></a></p>
+
+            <div class="fb-like-box" data-href="https://www.facebook.com/gruspbestpractices" data-width="348" data-height="275" data-show-faces="true" data-stream="false" data-header="true"></div>
         </div>
       </div>
 
@@ -137,7 +164,7 @@
           <div class="span4">
               <h2>Risorse utili</h2>
               <p>La comunità di PHP è sempre in fermento ed è sempre possibile trovare interessanti risorse sul web.</p>
-              <p>Oltre al sito del <a href="http://www.grusp.org">GrUSP</a> e alla relativa mailing list vi consigliamo di tenere nei vostri preferiti il sito <a href="http://www.php.net">ufficiale di PHP</a>.</p>
+              <p>Oltre al sito del <a href="http://www.grusp.it">GrUSP</a> e alla relativa mailing list vi consigliamo di tenere nei vostri preferiti il sito <a href="http://www.php.net">ufficiale di PHP</a>.</p>
               <p>Non dimenticatevi, inoltre, che molte novità, con i relativi approfondimenti, arrivano dalle conferenze come il <a href="http://www.phpday.it">phpDay</a>.</p>
               <p>Se vi sentite particolarmente pigri esiste un collettore di blog sul linguaggio, chiamato <a href="http://planet-php.net">Planet PHP</a>, i cui articoli sono sempre un ottimo spunto da cui far partire le proprie sessioni di studio.</p>
           </div>
@@ -156,7 +183,7 @@
               <p>Massimiliano Arione, una laurea in statistica nel cassetto, ha scoperto il web negli
               anni ‘90. Sviluppa in PHP a livello professionale dal 2001. Appassionato di open
               source, collabora attivamente alla comunità italiana di Symfony e più in generale di
-              PHP. È membro del direttivo del <a href="http://www.grusp.org">GrUSP</a> e presidente del <a href="http://roma.grusp.org">PHP User Group Roma</a>. È
+              PHP. È membro del direttivo del <a href="http://www.grusp.it">GrUSP</a> e presidente del <a href="http://roma.grusp.org">PHP User Group Roma</a>. È
               PHP5 Zend Certified Engineer.</p>
           </div>
           <div class="span4">
@@ -178,7 +205,7 @@
               <p>Alessandro Cinelli, detto <em>cirpo</em>, è sviluppatore PHP dal 2006. Ha iniziato come
               sistemista Linux per poi approdare con grande entusiasmo alla programmazione
               web, utilizzando diversi linguaggi come Java, JavaScript e PHP. È membro del direttivo
-              di <a href="http://www.grusp.org">GrUSP</a>, <a href="http://www.webdebs.com">WebDeBs</a> (gruppo bresciano di professionisti che lavorano sul web)
+              di <a href="http://www.grusp.org">GrUSP</a>, <a href="http://www.webdebs.org">WEBdeBS</a> (gruppo bresciano di professionisti che lavorano sul web)
               e <a href="http://roma.grusp.org">PugRoma</a> (PHP user group Roma). Adora la buona tavola, la birra belga, i concerti
               e i festival musicali.</p>
           </div>
