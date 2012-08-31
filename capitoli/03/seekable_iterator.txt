@@ -1,0 +1,74 @@
+<?php
+
+class MySeekableIterator implements SeekableIterator 
+{
+
+    private $data = array();
+    private $position = 0;
+
+    public function seek($position) 
+    {
+      $this->position = $position;
+      
+      if (!$this->valid()) 
+      {
+        throw new OutOfBoundsException("Posizione cercata invalida ($position)");
+      }
+    }
+
+    /* Methods required for Iterator interface */
+    
+    public function __construct(array $data) 
+    {
+        $this->data = $data;
+    }
+
+    public function rewind() 
+    {
+        $this->position = 0;
+    }
+
+    public function current() 
+    {
+        return $this->data[$this->position];
+    }
+
+    public function key() 
+    {
+      return $this->position;
+    }
+
+    public function next() 
+    {
+      ++$this->position;
+    }
+
+    public function valid() 
+    {
+      return isset($this->data[$this->position]);
+    }
+}
+
+$data = array('Mela', 'Pera', 'Arancia', 'Limone');
+
+try 
+{
+
+    $it = new MySeekableIterator($data);
+    echo $it->current(), PHP_EOL;
+    
+    $it->seek(2);
+    echo $it->current(), PHP_EOL;
+    
+    $it->seek(1);
+    echo $it->current(), PHP_EOL;
+    
+    $it->seek(10);
+    
+} 
+catch (OutOfBoundsException $e) 
+{
+    echo $e->getMessage(), PHP_EOL;
+}
+
+?>

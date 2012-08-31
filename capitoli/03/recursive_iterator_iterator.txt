@@ -1,0 +1,29 @@
+<?php
+
+$data = array(
+  'anagrafica' => array(
+    'nome'    => 'Mario',
+    'cognome' => 'Rossi',
+    'indirizzo' => array(
+      'casa'   => 'via dei pini 2, Roma',
+      'lavoro' => 'via dei faluti 3, Roma',
+    ),
+  ),
+  'accounts' => array(
+    'twitter'  => '@mariorossi',
+    'linkedin' => 'http://linkedin/mariorossi',
+    'skype'    => 'mario',
+  ),
+);
+
+$iterator = new RecursiveIteratorIterator(new RecursiveArrayIterator($data));
+
+foreach($iterator as $key => $value)
+{
+  echo $key, ': ', $value, PHP_EOL;
+}
+
+var_dump(iterator_to_array($iterator));
+var_dump($iterator->getArrayCopy());
+
+?>
