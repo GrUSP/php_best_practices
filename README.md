@@ -51,8 +51,8 @@ Per tutti noi i feedback sono molto importanti: ci daranno la misura di quanto s
 riusciti a raggiungere gli obiettivi prefissati con questo libro e ci aiuteranno a fare
 meglio la prossima volta.
 
-Potete contattarci e scaricare gli esempi tramite il [nostro sito](www.phpbestpractices.it)
-e la relativa pagina [Facebook](www.facebook.com/gruspbestpractices).
+Potete contattarci e scaricare gli esempi tramite il [nostro sito](http://www.phpbestpractices.it)
+e la relativa pagina [Facebook](http://www.facebook.com/gruspbestpractices).
 
 Risorse utili
 -------------
@@ -60,12 +60,12 @@ Risorse utili
 La comunità di PHP è sempre in fermento ed è sempre possibile trovare interessanti
 risorse sul web.
 
-Oltre al sito del [GrUSP](www.grusp.org) e alla relativa mailing list vi consigliamo di
-tenere nei vostri preferiti il sito ufficiale di [PHP](www.php.net).
+Oltre al sito del [GrUSP](http://www.grusp.org) e alla relativa mailing list vi consigliamo di
+tenere nei vostri preferiti il sito ufficiale di [PHP](http://www.php.net).
 
 Non dimenticatevi, inoltre, che molte novità, con i relativi approfondimenti, arrivano
 dalle conferenze come il [phpDay](http://www.phpday.it). Se vi sentite particolarmente pigri esiste un collettore
-di blog sul linguaggio, chiamato [Planet PHP](www.planet-php.net), i cui articoli
+di blog sul linguaggio, chiamato [Planet PHP](http://www.planet-php.net), i cui articoli
 sono sempre un ottimo spunto da cui far partire le proprie sessioni di studio.
 
 Ringraziamenti
