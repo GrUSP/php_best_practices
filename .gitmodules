@@ -1,3 +1,7 @@
 [submodule "capitoli/05/SimpleCache"]
-	path = capitoli/05/SimpleCache
-	url = https://github.com/ezimuel/SimpleCache.git
+    path = capitoli/05/SimpleCache
+    url = https://github.com/ezimuel/SimpleCache.git
+
+[submodule "capitoli/11/CIBlog"]
+	path = capitoli/11/CIBlog
+	url = https://github.com/micheleorselli/CIBlog.git
