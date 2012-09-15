@@ -1,0 +1,35 @@
+curl -v api.local
+* About to connect() to api.local port 80 (#0)
+*   Trying 127.0.0.1... connected
+* Connected to api.local (127.0.0.1) port 80 (#0)
+> GET / HTTP/1.1
+> User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8r zlib/1.2.3
+> Host: api.local
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+< Date: Wed, 25 Jan 2012 14:17:06 GMT
+< Server: Apache/2.2.15 (Unix) PHP/5.3.5 mod_ssl/2.2.15 OpenSSL/0.9.8o
+< X-Powered-By: PHP/5.3.5 ZendServer/5.0
+< Content-Length: 11
+< Content-Type: text/html
+< 
+* Connection #0 to host api.local left intact
+* Closing connection #0
+Ciao Mondo!
+
+
+curl -I http://api.local
+HTTP/1.1 200 OK
+Date: Wed, 25 Jan 2012 14:19:25 GMT
+Server: Apache/2.2.15 (Unix) PHP/5.3.5 mod_ssl/2.2.15 OpenSSL/0.9.8o
+X-Powered-By: PHP/5.3.5 ZendServer/5.0
+Content-Type: text/html
+
+curl -I http://api.local/invalid.php
+HTTP/1.1 404 Not Found
+Date: Wed, 25 Jan 2012 14:20:09 GMT
+Server: Apache/2.2.15 (Unix) PHP/5.3.5 mod_ssl/2.2.15 OpenSSL/0.9.8o
+Content-Type: text/html; charset=iso-8859-1
+
+curl -v -H "Accept:text/html" http://api.local

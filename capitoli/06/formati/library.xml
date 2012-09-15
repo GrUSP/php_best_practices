@@ -1,0 +1,16 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+<library>
+	<book id="1234" title="a book">
+		<author name="John Doe" />
+		<author name="Jane Doe" />
+		<description>
+			A wonderful book
+		</description>
+	</book>
+	<book id="3456" title="another book">
+		<author name="Jack London" />
+		<description>
+			Another wonderful book
+		</description>
+	</book>
+</library>	
