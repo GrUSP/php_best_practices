@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Deploy" default="deploy_temp" basedir=".">
+
+  <property name="dephloy.dir" value="${project.basedir}/Dephloy" />
+  <property name="dephloy.dry_run" value="true" />
+
+  <taskdef classpath="${dephloy.dir}" classname="Deploy" name="deploy" />
+
+  <target name="deploy_temp">
+    <deploy sorgente="."
+            destinazione="kea@localhost:/tmp/test_deploy"
+            dry_run="${dephloy.dry_run}" />
+  </target>
+
+  <target name="deploy_staging">
+    <deploy sorgente="."
+            destinazione="server.staging.org:/var/www/application"
+            dry_run="${dephloy.dry_run}"
+            ssh_key="/Users/kea/.ssh/id_rsa" />
+  </target>
+
+  <target name="clear_cache">
+    <property name="base_path" value="/tmp/test" />
+    <echo msg="Cancello la cache..." />
+    <ssh pubkeyfile="/Users/kea/.ssh/id_rsa.pub"
+         privkeyfile="/Users/kea/.ssh/id_rsa"
+         username="kea"
+         host="localhost"
+         command="rm -rf ${base_path}/cache/* ${base_path}/log/*" />
+  </target>
+
+  <target name="clear_cache_http">
+    <httpget url="http://nostrosito.com/tools/clear_cache.php" dir="/tmp"/>
+  </target>
+
+  <target name="clear_cache_http2">
+    <http-request url="http://nostrosito.com/tools/clear_cache.php"
+                  authUser="kea"
+                  authPassword="marmellata"
+                  authScheme="basic" />
+  </target>
+
+  <adhoc-task name="clear_cache_http3"><![CDATA[
+    class ClearCache extends Task {
+      private $url;
+
+      function setUrl($url) {
+        $this->url = $url;
+      }
+
+      function main() {
+        file_get_contents($this->url);
+      }
+    }
+  ]]></adhoc-task>
+  <target name="clear_cache_http3">
+    <clear_cache_http3 url="http://localhost/hackjs/dev/" />
+  </target>
+
+
+<target name="chmod">
+    <property name="base_path" value="/var/www/application" />
+    <property name="chown_user" value="www-data" />
+    <property name="chown_group" value="www-data" />
+    <ssh pubkeyfile="/Users/kea/.ssh/id_rsa.pub"
+         privkeyfile="/Users/kea/.ssh/id_rsa"
+         username="kea"
+         host="localhost"
+         command="chown -R ${chown_user}:${chown_group} ${base_path}/cache &&
+                  chown -R ${chown_user}:${chown_group} ${base_path}/log &&
+                  chmod 777 ${base_path}/upload" />
+</target>
+
+
+</project>

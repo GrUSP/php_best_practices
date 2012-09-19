@@ -1,0 +1,12 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<project name="Sync me baby" default="sync" basedir=".">
+<target name="sync">
+  <exec command="rsync -aCz ${project.basedir}/dir_to_sync remoteuser@localhost:/var/www/mysite/" escape="false" checkreturn="true" />
+  <if>
+    <not><equals arg1="${return_code}" arg2="0" /></not>
+    <then>
+      <fail message="rsync è terminato con qualche errore: ${output_messsage}" />
+    </then>
+  </if>
+</target>
+</project>

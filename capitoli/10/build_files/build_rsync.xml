@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<project name="example" basedir="." default="build">
+<property name="version" value="1.0" />
+
+<!-- Public targets -->
+<target name="sync:list" description="List files">
+  <phingcall target="-sync-execute-task">
+    <property name="listonly" value="true" />
+  </phingcall>
+</target>
+
+<target name="sync" description="Copy files">
+  <phingcall target="-sync-execute-task">
+    <property name="listonly" value="false" />
+  </phingcall>
+</target>
+
+<!-- Private targets -->
+<target name="-init" description="Load main settings">
+  <tstamp />
+  <property file="build.properties" />
+</target>
+
+<target name="-sync-execute-task" depends="-init">
+  <property file="sync.properties" />
+  <if>
+    <not>
+      <isset property="sync.verbose" />
+    </not>
+    <then>
+      <property name="sync.verbose" value="true" override="true" />
+      <echo message="The value of sync.verbose has been set to true" />
+    </then>
+  </if>
+  <property name="sync.remote.auth" value="${sync.remote.user}@${sync.remote.host}" />
+  <taskdef name="sync" classname="phing.tasks.ext.FileSyncTask" />
+  <sync
+    sourcedir="${sync.source.projectdir}"
+    destinationdir="${sync.remote.auth}:${sync.destination.projectdir}"
+    backupdir="${sync.remote.auth}:${sync.destination.backupdir}"
+    excludefile="${sync.exclude.file}"
+    listonly="${listonly}"
+    verbose="${sync.verbose}" />
+</target>
+</project>

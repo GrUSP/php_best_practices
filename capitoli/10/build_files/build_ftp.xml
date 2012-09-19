@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<project name="Deploy via FTP" default="deploy-application" basedir=".">
+
+  <property name="ftp.host" value="ftp.example.com" />
+  <property name="ftp.port" value="21" />
+  <property name="ftp.username" value="user" />
+  <property name="ftp.password" value="password" />
+  <property name="ftp.dir" value="/public_html/" />
+  <property name="ftp.mode" value="ascii" />
+
+  <fileset dir="." id="files.images">
+    <include name="img/**/*" />
+  </fileset>
+  <fileset dir="." id="files.library">
+    <include name="lib/**/*" />
+  </fileset>
+  <fileset dir="." id="files.application">
+    <include name="src/**/*" />
+    <include name="css/*" />
+    <include name="js/*" />
+    <include name="index.php" />
+  </fileset>
+
+  <target name="deploy">
+    <echo message="Copying fileset '${deploy.fileset.refid}' to ${ftp.host} in ${ftp.mode} mode" />
+    <ftpdeploy 
+      host="${ftp.host}" 
+      port="${ftp.port}" 
+      username="${ftp.username}" 
+      password="${ftp.password}"
+      dir="${ftp.dir}" 
+      mode="${ftp.mode}">
+      <fileset refid="${deploy.fileset.refid}" />
+    </ftpdeploy>
+  </target>
+  <target name="deploy-images">
+    <echo msg="Deploying image files" />
+    <phingcall target="deploy">
+      <property name="deploy.fileset.refid" value="files.images" />
+      <property name="ftp.mode" value="binary" override="true" />
+    </phingcall>
+  </target>
+  <target name="deploy-application">
+    <echo msg="Deploying application" />
+    <phingcall target="deploy">
+       <property name="deploy.fileset.refid" value="files.application" />
+    </phingcall>
+  </target>
+  <target name="deploy-library">
+    <echo msg="Deploying library" />
+    <phingcall target="deploy">
+      <property name="deploy.fileset.refid" value="files.library" />
+    </phingcall>
+  </target>
+  <target name="deploy-all">
+    <phingcall target="deploy-images" />
+    <phingcall target="deploy-application" />
+    <phingcall target="deploy-library" />
+  </target>
+</project>

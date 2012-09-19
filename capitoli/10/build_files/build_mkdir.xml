@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="PrimoBuilFile" default="hw">
+
+    <target name="hw">
+        <echo msg="Hello World! Creo una directory" />
+        <mkdir dir="./hello_world" />
+    </target>
+
+</project>
+
