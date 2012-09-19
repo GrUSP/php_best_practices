@@ -81,9 +81,8 @@
     </target> 
         
     <target name="start-selenium-server">
-        <exec executable="/bin/sh" passthru="true" dir="${project.basedir}/test/lib/">
-            <arg value="java -jar ./selenium-server.jar"/>
-        </exec>
+        <exec command="java -jar ${project.basedir}/test/lib/selenium-server.jar" passthru="true" />
+        
         <php expression="sleep(5);" />
     </target> 
 
