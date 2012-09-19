@@ -1,0 +1,109 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+
+<project name="CIBlog" basedir="." default="build">
+   <property file="build.properties" />
+
+    <target name="clean">
+        <delete>
+            <fileset dir="${project.basedir}/log">
+                <include name="*.log" />
+            </fileset>
+        </delete>
+
+        <delete dir="${project.basedir}/build/api" failonerror="false" />
+        <delete dir="${project.basedir}/build/code-browser" failonerror="false" />
+        <delete dir="${project.basedir}/build/coverage" failonerror="false"/>
+        <delete dir="${project.basedir}/build/pdepend" failonerror="false"/>
+        <delete dir="${project.basedir}/build/log" failonerror="false"/>
+    </target>
+
+    <target name="prepare">
+        <mkdir dir="${project.basedir}/build/api" mode='0775'/>
+        <mkdir dir="${project.basedir}/build/code-browser" mode='0775'/>
+        <mkdir dir="${project.basedir}/build/coverage" mode='0775'/>
+        <mkdir dir="${project.basedir}/build/pdepend" mode='0775'/>
+        <mkdir dir="${project.basedir}/build/log" mode='0775'/>
+    </target>
+
+    <target name="integrate-database" >
+        <pdosqlexec url="mysql:host=${db.host};dbname=${db.name}" userid="${db.username}" password="${db.password}">
+            <transaction src="${project.basedir}/data/base_structure.sql"/>
+            <formatter type="plain" usefile="false" />
+        </pdosqlexec>
+
+        <exec command="php bin/doctrine-migrations.phar --db-configuration=data/migration-db.php --configuration=data/migrations.yml migration:migrate -n" 
+              dir="${project.basedir}"/>
+    </target>
+
+    <target name="test-local">
+        <exec executable="phpunit" passthru="true">
+              <arg value="--group=unit,integration" />
+              <arg value="${project.basedir}/test" />
+        </exec>      
+    </target>
+
+    <target name="test-all">
+        <exec executable="phpunit" passthru="true">
+              <arg value="${project.basedir}/test" />
+        </exec>   
+    </target>
+        
+    <target name="metrics">
+        <phpcpd>
+           <fileset dir="${project.basedir}/src" id="filestocpd">
+             <include name="*.php" />
+            </fileset>
+            <formatter type="pmd" outfile="${project.basedir}/build/log/pmd-cpd.xml"/>
+        </phpcpd>
+
+        <phpmd>
+            <fileset dir="${project.basedir}/src">
+                <include name="*.php" />
+             </fileset>
+            <formatter type="xml" outfile="${project.basedir}/build/log/pmd.xml"/>
+        </phpmd>
+
+        <exec command="pdepend --jdepend-xml=${project.basedir}/build/log/jdepend.xml --jdepend-chart=${project.basedir}/build/pdepend/dependencies.svg --overview-pyramid=${project.basedir}/build/pdepend/overview-pyramid.svg ${project.basedir}/src" >
+        </exec>
+
+        <docblox title="API Documentation" destdir="${project.basedir}/build/api">
+            <fileset dir="${project.basedir}/src">
+                <include name="*.php" />
+            </fileset>
+        </docblox>
+
+        <phpcodesniffer
+            standard="PEAR"
+            file="${project.basedir}/src">
+        <formatter type="checkstyle" outfile="${project.basedir}/build/log/checkstyle.xml"/>
+        </phpcodesniffer>
+
+    </target> 
+        
+    <target name="start-selenium-server">
+        <exec executable="/bin/sh" passthru="true" dir="${project.basedir}/test/lib/">
+            <arg value="java -jar ./selenium-server.jar"/>
+        </exec>
+        <php expression="sleep(5);" />
+    </target> 
+
+    <target name="stop-selenium-server">
+        <http-request url="http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer" />
+    </target>
+        
+    <target name="private-build">
+        <phingcall target="clean" />
+        <phingcall target="prepare" />
+        <phingcall target="integrate-database" />
+        <phingcall target="test" />
+    </target>
+
+    <target name="build">
+        <phingcall target="clean" />
+        <phingcall target="prepare" />
+        <phingcall target="integrate-database" />
+        <phingcall target="test-all" />
+        <phingcall target="metrics" />
+    </target>
+
+</project>

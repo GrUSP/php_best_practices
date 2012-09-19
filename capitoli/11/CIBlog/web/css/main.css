@@ -1,0 +1,12 @@
+
+.header h2
+{
+  padding-top: 8px;
+}
+
+.container
+{
+  border-right: 1px solid #DDDDDD;
+  margin-left: 20%;
+  margin-right: 20%;
+}
