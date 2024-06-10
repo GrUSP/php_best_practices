@@ -1,5 +1,0 @@
----
-name: CIBlog Migrations
-migrations_namespace: CIBlogMigrations 
-table_name: ciblog_migration_version
-migrations_directory: ./migrations
